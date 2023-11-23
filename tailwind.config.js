@@ -4,9 +4,9 @@ export default {
   theme: {
     extend: {
       colors: {
-        MainColor: '#642E90',
         SecondColor:'#0039CB',
         navColor: '#161617',
+        colorBackground: '#F6F4F4',
       },
       fontFamily: {
         SourceSansPro: ['Source Sans Pro', 'sans-serif'],
