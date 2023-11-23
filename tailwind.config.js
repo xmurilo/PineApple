@@ -5,6 +5,7 @@ export default {
     extend: {
       colors: {
         MainColor: '#642E90',
+        navColor: '#161617',
       },
       fontFamily: {
         SourceSansPro: ['Source Sans Pro', 'sans-serif'],
