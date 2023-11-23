@@ -5,10 +5,11 @@ export default {
     extend: {
       colors: {
         MainColor: '#642E90',
+        SecondColor:'#0039CB',
       },
       fontFamily: {
         SourceSansPro: ['Source Sans Pro', 'sans-serif'],
-        SpliceSans:['Splice Sans', 'sans-serif']
+        SplineSans:['Spline Sans', 'sans-serif']
       },
       // Faça breakpoints personalizados
       screens: {
