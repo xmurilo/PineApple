@@ -7,7 +7,7 @@ const Navbar = () => {
     <div>
       <header className="flex items-center justify-center bg-navColor w-screen h-16" >
         <ul className="flex gap-10 items-center">
-          <li className="text-slate-200">
+          <li className="text-slate-200 items-center">
             <a href=""><img src={logo} alt="" width={41} height={42}/></a>
           </li>
 
