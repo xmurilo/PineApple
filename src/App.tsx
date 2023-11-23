@@ -1,9 +1,11 @@
-import Header from './components/Header'; // Importando o Header para o App.tsx
+ // Importando o Header para o App.tsx
+import Navbar from "./components/Navbar";
+
 
 function App() {
   return(
     <>
-      <Header/>
+      <Navbar/>
     </>
   )
 }
