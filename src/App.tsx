@@ -1,7 +1,8 @@
+import SectionMain from './components/SectionMain';
 function App() {
   return (
     <>
-      <h1></h1>
+      <SectionMain />
     </>
   );
 }
