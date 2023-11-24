@@ -12,10 +12,10 @@ const CardProduct: React.FC<CardProductProps> = ({ data }) => {
           key={item.id}
           className={`w-[300px] md:w-[678px] lg:w-[890px] xl:w-[1139px] 
           min-h-[460px] 
-          p-6 bg-slate-100 border border-[#B0B0B0] rounded-[50px]
+          p-6  border border-[#B0B0B0] rounded-[50px]
            flex flex-col md:flex-row items-center my-[65px]
             ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}
-           >
+        >
           <div className='w-1/2  flex justify-center'>
             <div className='flex flex-col items-center justify-center'>
               <img src={item.photo} alt={item.description} />
@@ -49,7 +49,7 @@ const CardProduct: React.FC<CardProductProps> = ({ data }) => {
               <ul className='flex items-center justify-center gap-x-12 mt-14'>
                 <button className='default_button_background'>Saiba mais</button>
                 <li>
-                  <a className='text-[#006EDB]'>Comprar &gt;</a>
+                  <button className='text-[#006EDB]'>Comprar &gt;</button>
                 </li>
               </ul>
             </div>
