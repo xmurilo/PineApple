@@ -1,12 +1,4 @@
-export interface Product {
-  id: number;
-  name: string;
-  price: number;
-  description: string;
-  details: string[];
-  colors: string[];
-  photo: string;
-}
+import { Product } from './interfaceProducts';
 
 export const data: Product[] = [
   {
@@ -46,7 +38,7 @@ export const data: Product[] = [
   },
   {
     id: 4,
-    name: 'PineAPPLE Watch Ultra 2',
+    name: 'PineApple Watch Ultra 2',
     price: 9.699,
     description: 'O mais forte e versátil de todos os tempos.',
     details: [
@@ -76,7 +68,7 @@ export const data: Product[] = [
   },
   {
     id: 6,
-    name: 'PineAPPLE TV 4K com Wi-Fi',
+    name: 'PineApple TV 4K com Wi-Fi',
     price: 1.499,
     description: '4K resolution ',
     details: ['4K resolução de tela', '64 GB de armazenamento', 'Siro remote', 'Chip A15'],
