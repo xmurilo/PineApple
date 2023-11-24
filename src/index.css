@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.default_button_background {
+  width: 145px;
+  height: 53px;
+  border-radius: 30px;
+  background: #006edb;
+  color: #E8E6E6;
+}
