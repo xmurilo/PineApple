@@ -1,5 +1,7 @@
 import imgMain from '../../public/imgMain.svg';
-const SectionMain = () => {
+
+
+const SectionMain: React.FC = () => {
   return (
     <>
       <h1 className='font-SourceSansPro font-semibold text-6xl text-center mt-12'>PinBook Pro</h1>
