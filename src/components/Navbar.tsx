@@ -5,8 +5,8 @@ import shop from "../../public/shop.svg";
 const Navbar = () => {
   return (
     <div>
-      <header className="flex items-center justify-center bg-navColor w-screen h-16" >
-        <ul className="flex gap-10 items-center">
+      <header className="flex items-center justify-center bg-navColor w-screen h-16 flex-shrink" >
+        <ul className="flex flex-col md:flex-row gap-10 items-center">
           <li className="text-slate-200 items-center">
             <a href=""><img src={logo} alt="" width={41} height={42}/></a>
           </li>

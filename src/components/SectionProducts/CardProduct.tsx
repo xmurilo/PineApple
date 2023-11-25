@@ -1,13 +1,31 @@
+import { useState } from 'react';
 import { Product } from '../../assets/interfaceProducts';
+import 'react-responsive-modal/styles.css';
+import { Modal } from 'react-responsive-modal';
 
 interface CardProductProps {
   data: Product[];
 }
 
 const CardProduct: React.FC<CardProductProps> = ({ data }) => {
+  const [open, setOpen] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+
+  const onOpenModal = (product: Product) => {
+    setSelectedProduct(product);
+    setOpen(true);
+  }
+  const onCloseModal = () => {
+    setSelectedProduct(null);
+    setOpen(false);
+  }
+
+
   return (
+     
     <section className='flex flex-col justify-center '>
       {data.map((item, index) => (
+        <>
         <div
           key={item.id}
           className={`w-[300px] md:w-[678px] lg:w-[890px] xl:w-[1139px] 
@@ -47,7 +65,7 @@ const CardProduct: React.FC<CardProductProps> = ({ data }) => {
               </p>
 
               <ul className='flex items-center justify-center gap-x-12 mt-14'>
-                <button className='default_button_background'>Saiba mais</button>
+                <button className='default_button_background' onClick={() => onOpenModal(item)}>Saiba mais</button>
                 <li>
                   <button className='text-[#006EDB]'>Comprar &gt;</button>
                 </li>
@@ -55,8 +73,31 @@ const CardProduct: React.FC<CardProductProps> = ({ data }) => {
             </div>
           </div>
         </div>
+        </>
       ))}
+        <Modal open={open} onClose={onCloseModal} center>
+          <div className='p-5 '>
+            <img src={selectedProduct?.photo} alt={selectedProduct?.name} className='m-auto' />
+            <div className='flex items-center justify-center my-5'>
+              {selectedProduct?.colors.map((color, index) => (
+                <div key={index}>
+                  <div
+                    className='w-11 h-11 rounded-full'
+                    style={{ backgroundColor: color }}
+                  ></div>
+                </div>
+              ))}
+            </div>
+            <h2 className='font-SourceSansPro text-[24px] md:text-[40px] text-center font-semibold'>
+              {selectedProduct?.name}
+            </h2>
+            <p className='text-center '>{selectedProduct?.description}</p>
+            <p className='text-center'>{selectedProduct?.details}</p>
+            <h2 className='font-SourceSansPro text-[24px] md:text-[40px] text-center font-semibold'>{selectedProduct?.price}</h2>
+          </div>
+        </Modal>
     </section>
+    
   );
 };
 
