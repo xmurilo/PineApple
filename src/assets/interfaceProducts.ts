@@ -6,4 +6,5 @@ export interface Product {
   details: string[];
   colors: string[];
   photo: string;
+  quantity: number;
 }
