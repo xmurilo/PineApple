@@ -41,7 +41,7 @@ const CardProduct: React.FC<CardProductProps> = ({ data }) => {
                 {item.colors.map((color, index) => (
                   <div key={index}>
                     <div
-                      className='w-11 h-11 rounded-full'
+                      className='w-9 h-9 rounded-full'
                       style={{ backgroundColor: color }}
                     ></div>
                   </div>
