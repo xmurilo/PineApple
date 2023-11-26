@@ -54,7 +54,7 @@ export const data: Product[] = [
   {
     id: 5,
     name: 'PinPods Max',
-    price: 6.59,
+    price: 6.599,
     description: 'O mais forte e versátil de todos, ao seu dispor.',
     details: [
       'Áudio espacial personalizado',
