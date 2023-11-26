@@ -33,7 +33,7 @@ function App() {
 
   return (
     <>
-      <Navbar count={count} products={products} removeProduct={removeProduct} />
+      <Navbar count={count} products={products} removeProduct={removeProduct} handleAddProduct={handleAddProduct} />
       <SectionMain />
       <SectionProducts handleAddProduct={handleAddProduct} />
     </>
