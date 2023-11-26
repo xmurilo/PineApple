@@ -6,14 +6,17 @@ import Menu from './Menu';
 import 'react-responsive-modal/styles.css';
 import { Modal } from 'react-responsive-modal';
 import { Product } from '../assets/interfaceProducts';
+import add from '../../public/add.png';
+import remove from '../../public/remove.png';
 
 interface NavProps {
   count: number;
   products: Product[];
-  removeProduct: (id: number) => void;
+  removeProduct: (index: number) => void;
+  handleAddProduct: (product: Product) => void;
 }
 
-const Navbar: React.FC<NavProps> = ({ count, products, removeProduct }) => {
+const Navbar: React.FC<NavProps> = ({ count, products, removeProduct, handleAddProduct }) => {
   const [isMobile, setIsMobile] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -119,15 +122,16 @@ const Navbar: React.FC<NavProps> = ({ count, products, removeProduct }) => {
       
       {open && (
         <Modal open={open} onClose={() => setOpen(!open)} center>
-          {/* Seu código de cabeçalho/modal */}
+          <div className='w-[400px] text-center '>
+            <h1 className='text-center font-semibold'>Carrinho</h1>
           {products
             .reduce((uniqueProducts: Product[], product) => {
               const existingProduct = uniqueProducts.find(p => p.id === product.id);
 
               if (existingProduct) {
-                existingProduct.quantity += 1; // Atualiza a quantidade
+                existingProduct.quantity += 1; 
               } else {
-                uniqueProducts.push({ ...product, quantity: 1 }); // Adiciona novo produto
+                uniqueProducts.push({ ...product, quantity: 1 }); 
               }
 
               return uniqueProducts;
@@ -135,23 +139,32 @@ const Navbar: React.FC<NavProps> = ({ count, products, removeProduct }) => {
             .map((product, index) => (
               <section
                 key={product.id}
-                className='flex items-center justify-center h-[150px] my-8 bg-[#F1F2FF] rounded-'
+                className='flex items-center justify-center gap-20 h-[150px] my-8 bg-[#F1F2FF] rounded-3xl'
               >
+                
                 <div className='img_cart rounded'>
-                  {/* Renderize a imagem */}
+                  
                   <img width={100} height={100} src={product.photo} alt='' />
                 </div>
                 <div className='text_cart'>
-                  {/* Renderize o nome, preço e botão de remoção */}
+                  
                   <h2 className='text-[16px]'>{product.name}</h2>
-                  <p className='text-[14px] text-center'>{product.price}</p>
-                  <p className='text-[14px] text-center'>Quantidade: {product.quantity}</p>
-                  <button className='text-[14px] text-center' onClick={() => removeProduct(index)}>
-                    Remover
-                  </button>
+                  <p className='text-[14px] text-center font-extrabold text-lg'>R$ {product.price}</p>
+                  <p className='text-[14px] text-center'>Quantidade: <span className='font-bold'>{product.quantity}</span></p>
+                  <div className='text-center'>
+                    <button className='text-[14px] mr-2' onClick={() => handleAddProduct(product)}>
+                      <img src={add} alt="" width={35} height={35}/>
+                    </button>
+                    <button className='text-[14px] ml-2' onClick={() => removeProduct(index)}>
+                      <img src={remove} alt="" width={35} height={35}/>
+                    </button>
+                  </div>
                 </div>
               </section>
+              
             ))}
+              <button className='bg-SecondColor text-white rounded-3xl py-2 px-4'>Comprar</button>
+            </div>
         </Modal>
       )}
     </>
