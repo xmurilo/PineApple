@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import SectionMain from './components/SectionMain';
 import SectionProducts from './components/SectionProducts/SectionProducts';
 import { Product } from './assets/interfaceProducts';
+import Footer from './components/Footer';
 
 function App() {
   const [products, setProducts] = useState<Product[]>([]);
@@ -36,6 +37,7 @@ function App() {
       <Navbar count={count} products={products} removeProduct={removeProduct} handleAddProduct={handleAddProduct} />
       <SectionMain />
       <SectionProducts handleAddProduct={handleAddProduct} />
+      <Footer/> 
     </>
   );
 }
