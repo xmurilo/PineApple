@@ -10,6 +10,7 @@ export const data: Product[] = [
     colors: ['#616161', '#E3E4E5', '#F9D4C2'],
     photo:
       'https://www.apple.com/v/mac/home/bw/images/overview/select/product_tile_mba_13__ci4jh6tvqvyq_large.png',
+    quantity: 0,
   },
   {
     id: 2,
@@ -20,6 +21,7 @@ export const data: Product[] = [
     colors: ['#616161', '#E3E4E5'],
     photo:
       'https://www.apple.com/v/ipad/home/ch/images/overview/compare_ipad_pro__erf9x8mw04sy_large.png',
+    quantity: 0,
   },
   {
     id: 3,
@@ -35,6 +37,7 @@ export const data: Product[] = [
     colors: ['#616161', '#E3E4E5', '#F9D4C2', '#434343'],
     photo:
       'https://www.apple.com/v/iphone/home/bp/images/overview/compare/compare_iphone_15_pro__c344odaqs5qq_medium.png',
+    quantity: 0,
   },
   {
     id: 4,
@@ -50,6 +53,7 @@ export const data: Product[] = [
     colors: ['#434343'],
     photo:
       'https://www.apple.com/br/watch/images/watch-shared-compare/compare_ultra2__fzfgtok6moeq_medium.jpg',
+    quantity: 0,
   },
   {
     id: 5,
@@ -65,6 +69,7 @@ export const data: Product[] = [
     colors: ['#616161', '#E3E4E5', '#F9D4C2'],
     photo:
       'https://www.apple.com/v/airpods/shared/compare/d/images/compare/compare_airpods_max__b14s2x6q07rm_large.png',
+    quantity: 0,
   },
   {
     id: 6,
@@ -75,5 +80,6 @@ export const data: Product[] = [
     colors: ['#616161', '#E3E4E5', '#F9D4C2'],
     photo:
       'https://www.apple.com/v/apple-tv-4k/ah/images/overview/compare/apple_4k_wifi__fpjm9mmlrzyy_medium.jpg',
+    quantity: 0,
   },
 ];
